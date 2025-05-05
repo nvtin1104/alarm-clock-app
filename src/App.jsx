@@ -67,8 +67,8 @@ const App = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full mx-auto mt-10">
-      <h1 className="text-2xl font-bold text-center mb-4">Báo Thức Định Kỳ</h1>
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full h-full mx-auto mt-10">
+      <h1 className="text-2xl text-dark font-bold text-center mb-4">Báo Thức Định Kỳ</h1>
       <div className="mb-4">
         <label className="block text-gray-700">Thời gian lặp (phút):</label>
         <input

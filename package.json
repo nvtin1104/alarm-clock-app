@@ -8,14 +8,16 @@
     "electron": "electron .",
     "build": "vite build",
     "pack": "electron-builder --win --x64",
+    "clean": "rimraf dist/win-unpacked dist/*.exe",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "build": {
     "appId": "com.example.alarmclock",
-    "productName": "Alarm Clock",
+    "productName": "AlarmClock",
     "files": ["dist/**/*", "electron/**/*"],
     "win": {
+      "icon": "electron/assets/icon.ico",
       "target": ["nsis"]
     }
   },
