@@ -1,9 +1,14 @@
 import AlarmNotifier from "./components/AlarmNotifier";
-import AppointmentScheduler from "./components/AppointmentScheduler";
+import { enable, isEnabled, disable } from '@tauri-apps/plugin-autostart';
+import { TrayIcon } from '@tauri-apps/api/tray';
+import { Menu } from "@tauri-apps/api/menu";
+await enable();
+
+// const tray = await TrayIcon.new(options);
 function App() {
+  
   return (
     <main className="container ">
-      <AppointmentScheduler />
       <AlarmNotifier />
     </main>
   );
