@@ -2,9 +2,18 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": ["main"],
+  "windows": [
+    "main"
+  ],
   "permissions": [
     "core:default",
-    "opener:default"
+    "opener:default",
+    "core:menu:default",
+    "core:tray:default",
+    "core:window:allow-hide",
+    "core:app:allow-default-window-icon",
+    "core:window:allow-close",
+    "process:default",
+    "core:window:allow-show"
   ]
 }
