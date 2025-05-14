@@ -1,13 +1,31 @@
 import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
+import { enable, isEnabled } from '@tauri-apps/plugin-autostart';
 import "./App.css";
 import { TrayIcon } from '@tauri-apps/api/tray';
 import { Menu } from "@tauri-apps/api/menu";
 import { exit } from '@tauri-apps/plugin-process';
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import { defaultWindowIcon } from "@tauri-apps/api/app";
+import {
+  isPermissionGranted,
+  requestPermission,
+  sendNotification,
+} from '@tauri-apps/plugin-notification';
 
+let permissionGranted = await isPermissionGranted();
+
+if (!permissionGranted) {
+  const permission = await requestPermission();
+  permissionGranted = permission === 'granted';
+}
+
+if (permissionGranted) {
+  sendNotification({ title: 'Tauri', body: 'Tauri is awesome!' });
+}
+await enable();
+console.log(`registered for autostart? ${await isEnabled()}`);
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");

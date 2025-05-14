@@ -14,6 +14,8 @@
     "core:app:allow-default-window-icon",
     "core:window:allow-close",
     "process:default",
-    "core:window:allow-show"
+    "core:window:allow-show",
+    "notification:allow-request-permission",
+    "notification:default"
   ]
 }
